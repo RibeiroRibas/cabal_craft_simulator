@@ -1,0 +1,20 @@
+const cabalCraftSimulator = "Cabal - Simulador de Craft";
+const selectACategory = "Selecione uma Categoria";
+const playFontFamily = "Play";
+const selectAnItemToCraft = "Seleciona um item para craftar";
+const craftSimulate = "Simule o resultado do craft";
+const enterTheNumberOfAttempts = "Informe a quantidade de tentativas:";
+const enterTheCreatedNumbers = "Informe os items criados:";
+const justNumbers = "Somente números";
+const calculateProfitAndLoss = "Calcular lucro e prejuízo";
+const reset = "Resetar";
+const totalInvestmentPurchasePrice = "Total investido (preço de compra):";
+const totalInvestmentSalePrice = "Total investido (preço de venda):";
+const totalCreatedPurchasePrice = "Total criado (preço de compra):";
+const totalCreatedSalePrice = "Total criado (preço de venda):";
+const finalGainPurchasePrice = "Ganho final (preço de compra):";
+const finalGainSalePrice = "Ganho final (preço de venda):";
+const amount = "Quantidade:";
+const selectACreatedItemAndEnterWithAmount = "Selecione o item criado e informe a quantidade:";
+const selectAnItemInTheListAbove = "Selecione um item na lista abaixo:";
+
