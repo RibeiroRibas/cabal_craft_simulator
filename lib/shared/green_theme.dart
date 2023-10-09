@@ -22,7 +22,7 @@ ThemeData greenTheme = ThemeData(
   textTheme: const TextTheme(
     displaySmall: TextStyle(fontSize: 14, color: ThemeColors.white),
     displayMedium: TextStyle(
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: FontWeight.bold,
       color: ThemeColors.white,
     ),

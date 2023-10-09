@@ -33,6 +33,15 @@ mixin _$CategoryController on CategoryStore, Store {
     return _$findAllCategoriesAsyncAction.run(() => super.findAllCategories());
   }
 
+  late final _$saveCategoryAsyncAction =
+      AsyncAction('CategoryStore.saveCategory', context: context);
+
+  @override
+  Future<void> saveCategory(String categoryName) {
+    return _$saveCategoryAsyncAction
+        .run(() => super.saveCategory(categoryName));
+  }
+
   @override
   String toString() {
     return '''

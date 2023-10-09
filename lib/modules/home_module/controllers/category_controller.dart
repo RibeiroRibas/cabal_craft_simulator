@@ -16,6 +16,22 @@ abstract class CategoryStore with Store {
 
   @action
   Future<void> findAllCategories() async {
+    categories.clear();
     categories.addAll(await repository.findAll());
+  }
+
+  @action
+  Future<void> saveCategory(String categoryName) async {
+    Category category = Category(categoryName);
+    repository.save(category).then((_) => categories.add(category));
+  }
+
+  Category? getCategoryFromName(String name){
+    for (Category category in categories){
+      if(category.name == name){
+        return category;
+      }
+    }
+    return null;
   }
 }

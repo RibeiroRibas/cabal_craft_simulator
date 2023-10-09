@@ -1,43 +1,42 @@
 import 'package:cabal_craft_simulator/data/category_data.dart';
-import 'package:cabal_craft_simulator/model/category.dart';
 import 'package:cabal_craft_simulator/model/sub_category.dart';
 
 SubCategory amulet = SubCategory(
   name: "Amuleto",
-  category: accessory,
+  categories: [accessory],
 );
 
 SubCategory katana = SubCategory(
   name: "Katana",
-  category: weapon,
+  categories: [weapon],
 );
 
 SubCategory cartridges = SubCategory(
   name: "Cartuchos",
-  category: chloe,
+  categories: [chloe],
 );
 
 SubCategory dungeons = SubCategory(
   name: "Calabouços",
-  category: chloe,
+  categories: [chloe,favorites],
 );
 
 SubCategory discs = SubCategory(
   name: "Discos",
-  category: chloe,
+  categories: [chloe],
 );
 
 SubCategory basic = SubCategory(
   name: "Básico",
-  category: craft,
+  categories: [chloe],
 );
 
 SubCategory jewel = SubCategory(
   name: "Jóia",
-  category: craft,
+  categories: [chloe],
 );
 
-List<SubCategory> getAllCategories = [
+List<SubCategory> getAllSubCategories = [
   amulet,
   katana,
   cartridges,

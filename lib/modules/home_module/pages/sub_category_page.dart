@@ -45,7 +45,7 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextWithBorderComponent(
-                text: selectACategory,
+                text: selectASubCategory,
                 textStyle: greenTheme.textTheme.displayMedium,
               ),
             ),
@@ -68,6 +68,7 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
                         Map<String, dynamic> arguments = {
                           "subCategory":
                               controller.subCategories.elementAt(index),
+                          "category": widget.category
                         };
                         navigator.goTo(
                           itemsRoute,

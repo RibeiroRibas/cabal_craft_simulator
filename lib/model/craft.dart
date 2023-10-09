@@ -5,5 +5,10 @@ class Craft {
   Map<Item, int> materials;
   List<Item> results;
 
-  Craft({required this.item, required this.materials,required this.results});
+  Craft({required this.item, required this.materials, required this.results});
+
+  factory Craft.fromCraft(Craft craft) {
+    return Craft(
+        item: craft.item, materials: craft.materials, results: craft.results);
+  }
 }

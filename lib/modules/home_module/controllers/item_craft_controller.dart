@@ -1,3 +1,4 @@
+import 'package:cabal_craft_simulator/model/category.dart';
 import 'package:cabal_craft_simulator/model/craft.dart';
 import 'package:cabal_craft_simulator/model/item.dart';
 import 'package:cabal_craft_simulator/model/sub_category.dart';
@@ -19,8 +20,8 @@ abstract class ItemCraftStore with Store {
   List<Craft> itemsToCraft = [];
 
   @action
-  Future<void> findBySubCategory(SubCategory subCategory) async {
-    List<Item> items = await itemRepository.findBySubCategory(subCategory);
+  Future<void> findBySubCategoryAndCategory(SubCategory subCategory, Category category) async {
+    List<Item> items = await itemRepository.findBySubCategoryAndCategory(subCategory,category);
     itemsToCraft = await craftRepository.findByItem(items);
   }
 }

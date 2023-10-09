@@ -5,4 +5,8 @@ class CategoryRepository {
   Future<List<Category>> findAll() async {
     return getAllCategories;
   }
+
+  Future<void> save(Category category) async{
+    getAllCategories.add(category);
+  }
 }

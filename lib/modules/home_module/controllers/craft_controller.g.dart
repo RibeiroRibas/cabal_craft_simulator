@@ -41,6 +41,53 @@ mixin _$CraftController on CraftStore, Store {
     });
   }
 
+  late final _$craftsAtom = Atom(name: 'CraftStore.crafts', context: context);
+
+  @override
+  ObservableList<Craft> get crafts {
+    _$craftsAtom.reportRead();
+    return super.crafts;
+  }
+
+  @override
+  set crafts(ObservableList<Craft> value) {
+    _$craftsAtom.reportWrite(value, super.crafts, () {
+      super.crafts = value;
+    });
+  }
+
+  late final _$selectedMaterialsAtom =
+      Atom(name: 'CraftStore.selectedMaterials', context: context);
+
+  @override
+  ObservableList<Item> get selectedMaterials {
+    _$selectedMaterialsAtom.reportRead();
+    return super.selectedMaterials;
+  }
+
+  @override
+  set selectedMaterials(ObservableList<Item> value) {
+    _$selectedMaterialsAtom.reportWrite(value, super.selectedMaterials, () {
+      super.selectedMaterials = value;
+    });
+  }
+
+  late final _$selectedResultsAtom =
+      Atom(name: 'CraftStore.selectedResults', context: context);
+
+  @override
+  ObservableList<Item> get selectedResults {
+    _$selectedResultsAtom.reportRead();
+    return super.selectedResults;
+  }
+
+  @override
+  set selectedResults(ObservableList<Item> value) {
+    _$selectedResultsAtom.reportWrite(value, super.selectedResults, () {
+      super.selectedResults = value;
+    });
+  }
+
   late final _$qtdCraftAtom =
       Atom(name: 'CraftStore.qtdCraft', context: context);
 
@@ -55,6 +102,32 @@ mixin _$CraftController on CraftStore, Store {
     _$qtdCraftAtom.reportWrite(value, super.qtdCraft, () {
       super.qtdCraft = value;
     });
+  }
+
+  late final _$addSelectedMaterialAsyncAction =
+      AsyncAction('CraftStore.addSelectedMaterial', context: context);
+
+  @override
+  Future<void> addSelectedMaterial(Item item) {
+    return _$addSelectedMaterialAsyncAction
+        .run(() => super.addSelectedMaterial(item));
+  }
+
+  late final _$addSelectedResultsAsyncAction =
+      AsyncAction('CraftStore.addSelectedResults', context: context);
+
+  @override
+  Future<void> addSelectedResults(Item item) {
+    return _$addSelectedResultsAsyncAction
+        .run(() => super.addSelectedResults(item));
+  }
+
+  late final _$saveAsyncAction =
+      AsyncAction('CraftStore.save', context: context);
+
+  @override
+  Future<void> save(Item item, Map<Item, int> materials) {
+    return _$saveAsyncAction.run(() => super.save(item, materials));
   }
 
   late final _$CraftStoreActionController =
@@ -109,6 +182,9 @@ mixin _$CraftController on CraftStore, Store {
     return '''
 craftResult: ${craftResult},
 craftCalculator: ${craftCalculator},
+crafts: ${crafts},
+selectedMaterials: ${selectedMaterials},
+selectedResults: ${selectedResults},
 qtdCraft: ${qtdCraft}
     ''';
   }

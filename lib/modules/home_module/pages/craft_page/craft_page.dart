@@ -45,6 +45,7 @@ class _CraftPageState extends State<CraftPage> {
   @override
   Widget build(BuildContext context) {
     return AppLayoutBase(
+      isShowFabButton: false,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

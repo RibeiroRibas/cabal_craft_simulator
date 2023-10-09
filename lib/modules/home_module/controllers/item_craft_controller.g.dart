@@ -25,13 +25,15 @@ mixin _$ItemCraftController on ItemCraftStore, Store {
     });
   }
 
-  late final _$findBySubCategoryAsyncAction =
-      AsyncAction('ItemCraftStore.findBySubCategory', context: context);
+  late final _$findBySubCategoryAndCategoryAsyncAction = AsyncAction(
+      'ItemCraftStore.findBySubCategoryAndCategory',
+      context: context);
 
   @override
-  Future<void> findBySubCategory(SubCategory subCategory) {
-    return _$findBySubCategoryAsyncAction
-        .run(() => super.findBySubCategory(subCategory));
+  Future<void> findBySubCategoryAndCategory(
+      SubCategory subCategory, Category category) {
+    return _$findBySubCategoryAndCategoryAsyncAction
+        .run(() => super.findBySubCategoryAndCategory(subCategory, category));
   }
 
   @override

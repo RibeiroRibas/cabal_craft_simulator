@@ -1,3 +1,4 @@
+import 'package:cabal_craft_simulator/model/category.dart';
 import 'package:cabal_craft_simulator/model/sub_category.dart';
 import 'package:cabal_craft_simulator/modules/home_module/controllers/item_craft_controller.dart';
 import 'package:cabal_craft_simulator/modules/home_module/pages/app_layout_base.dart';
@@ -12,8 +13,11 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class ItemCraftPage extends StatefulWidget {
   final SubCategory subCategory;
+  final Category category;
 
-  const ItemCraftPage({Key? key, required this.subCategory}) : super(key: key);
+  const ItemCraftPage(
+      {Key? key, required this.subCategory, required this.category})
+      : super(key: key);
 
   @override
   State<ItemCraftPage> createState() => _ItemCraftPageState();
@@ -32,7 +36,7 @@ class _ItemCraftPageState extends State<ItemCraftPage> {
   }
 
   Future _findBySubCategory() async {
-    await controller.findBySubCategory(widget.subCategory);
+    await controller.findBySubCategoryAndCategory(widget.subCategory,widget.category);
   }
 
   @override

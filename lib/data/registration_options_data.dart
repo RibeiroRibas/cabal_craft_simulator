@@ -1,0 +1,1 @@
+List<String> getRegistrationOptions = ["Categoria","Sub Categoria", "Item", "Item para Craft"];

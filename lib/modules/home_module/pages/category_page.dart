@@ -24,7 +24,6 @@ class _CategoryPageState extends State<CategoryPage> {
   void initState() {
     controller = Modular.get<CategoryController>();
     navigator = Modular.get<HomeRouteNavigator>();
-
     super.initState();
   }
 

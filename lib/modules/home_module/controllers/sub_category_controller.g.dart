@@ -25,6 +25,22 @@ mixin _$SubCategoryController on SubCategoryStore, Store {
     });
   }
 
+  late final _$selectedCategoriesAtom =
+      Atom(name: 'SubCategoryStore.selectedCategories', context: context);
+
+  @override
+  ObservableList<Category> get selectedCategories {
+    _$selectedCategoriesAtom.reportRead();
+    return super.selectedCategories;
+  }
+
+  @override
+  set selectedCategories(ObservableList<Category> value) {
+    _$selectedCategoriesAtom.reportWrite(value, super.selectedCategories, () {
+      super.selectedCategories = value;
+    });
+  }
+
   late final _$findByCategoryAsyncAction =
       AsyncAction('SubCategoryStore.findByCategory', context: context);
 
@@ -34,10 +50,34 @@ mixin _$SubCategoryController on SubCategoryStore, Store {
         .run(() => super.findByCategory(category));
   }
 
+  late final _$findAllSubCategoriesAsyncAction =
+      AsyncAction('SubCategoryStore.findAllSubCategories', context: context);
+
+  @override
+  Future<void> findAllSubCategories() {
+    return _$findAllSubCategoriesAsyncAction
+        .run(() => super.findAllSubCategories());
+  }
+
+  late final _$SubCategoryStoreActionController =
+      ActionController(name: 'SubCategoryStore', context: context);
+
+  @override
+  void addSelectedCategory(Category? category) {
+    final _$actionInfo = _$SubCategoryStoreActionController.startAction(
+        name: 'SubCategoryStore.addSelectedCategory');
+    try {
+      return super.addSelectedCategory(category);
+    } finally {
+      _$SubCategoryStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
-subCategories: ${subCategories}
+subCategories: ${subCategories},
+selectedCategories: ${selectedCategories}
     ''';
   }
 }

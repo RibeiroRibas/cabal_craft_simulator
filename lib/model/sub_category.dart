@@ -2,7 +2,7 @@ import 'package:cabal_craft_simulator/model/category.dart';
 
 class SubCategory {
   String name;
-  Category category;
+  List<Category> categories;
 
-  SubCategory({required this.name, required this.category});
+  SubCategory({required this.name, required this.categories});
 }

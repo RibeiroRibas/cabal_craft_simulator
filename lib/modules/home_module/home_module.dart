@@ -29,7 +29,8 @@ class HomeModule extends Module {
         Bind.factory((_) => ItemRepository()),
         Bind.factory((_) => CraftRepository()),
         Bind.singleton((i) => ItemCraftController(i(), i())),
-        Bind.singleton((_) => CraftController()),
+        Bind.factory((_) => CraftRepository()),
+        Bind.singleton((i) => CraftController(i())),
       ];
 
   @override
@@ -52,6 +53,7 @@ class HomeModule extends Module {
           itemsRoute,
           child: (context, args) => ItemCraftPage(
             subCategory: args.data["subCategory"],
+            category: args.data["category"],
           ),
           transition: TransitionType.defaultTransition,
           duration: const Duration(milliseconds: durationTransaction),

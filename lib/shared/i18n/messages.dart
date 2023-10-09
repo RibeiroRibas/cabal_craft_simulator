@@ -1,5 +1,6 @@
 const cabalCraftSimulator = "Cabal - Simulador de Craft";
-const selectACategory = "Selecione uma Categoria";
+const selectACategory = "Selecione uma categoria";
+const selectASubCategory = "Selecione uma sub categoria";
 const playFontFamily = "Play";
 const selectAnItemToCraft = "Seleciona um item para craftar";
 const craftSimulate = "Simule o resultado do craft";
@@ -17,4 +18,34 @@ const finalGainSalePrice = "Ganho final (preço de venda):";
 const amount = "Quantidade:";
 const selectACreatedItemAndEnterWithAmount = "Selecione o item criado e informe a quantidade:";
 const selectAnItemInTheListAbove = "Selecione um item na lista abaixo:";
+const requiredField = 'Campo obrigatório';
 
+const selectAnOptionToRegister = "Selecione uma opção de registro";
+const registeredCategories = "Categorias registradas";
+const categoryAlreadyExist = "Já existe uma categoria com esse nome";
+const inputCategoryName = "Nome da Categoria";
+const newCategory = "Nova categoria";
+const save = "Salvar";
+
+const newSubCategory = "Nova Sub Categoria";
+const registeredSubCategories = "Sub categorias registradas";
+const subCategoryAlreadyExist = "Já existe uma sub categoria com esse nome";
+const inputSubCategoryName = "Nome da sub categoria";
+const chooseOneOrMoreCategories = 'Escolha uma ou mais categorias';
+
+const newItem = "Novo item";
+const chooseOneSubCategory = 'Escolha uma sub categoria';
+const targetCharacter = 'Personagem alvo';
+const itemAlreadyExist = "Já existe um item com esse nome";
+const inputItemName = "Nome do item";
+const registeredItems = "Itens registradas";
+const itemPurchasePrice = "Valor de compra";
+const inputLevelItem = "Level ou Nível";
+const numberOfSlots = "Número de slots";
+
+const newCraft = "Novo craft";
+const chooseOneItemToCraft = 'Escolha um item para craftar';
+const selectRequiredMaterials = 'Selecione os materias necessários';
+const registeredCrafts = "Crafts registrados";
+const inputMaterialAmount = "Quantidade";
+const chooseResults = 'Informe os possíveis resultados';
